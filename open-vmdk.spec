@@ -9,6 +9,7 @@ License:	Apache v2.0
 Group:		Applications/File
 Source0:	https://github.com/vmware/open-vmdk/archive/%{gitref}/%{name}-%{snap}.tar.gz
 # Source0-md5:	ab2448b64262ccb43a0ec545f18156d2
+Patch0:		%{name}-extern.patch
 URL:		https://github.com/vmware/open-vmdk
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,6 +30,7 @@ oraz pliku manifestu z rozszerzeniem .mf.
 
 %prep
 %setup -q -n %{name}-%{gitref}
+%patch0 -p1
 
 %build
 %{__make} \
