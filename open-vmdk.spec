@@ -30,7 +30,7 @@ oraz pliku manifestu z rozszerzeniem .mf.
 
 %prep
 %setup -q -n %{name}-%{gitref}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} \
